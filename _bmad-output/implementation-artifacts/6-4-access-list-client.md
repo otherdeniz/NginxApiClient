@@ -1,6 +1,6 @@
 # Story 6.4: Access List Client
 
-Status: ready-for-dev
+Status: review
 
 ## Story
 
@@ -16,15 +16,15 @@ so that I can automate IP-based and authentication-based access restrictions.
 
 ## Tasks / Subtasks
 
-- [ ] Task 1: Create access list models in `Models/AccessLists/`
-  - [ ] `AccessListResponse`, `CreateAccessListRequest`, `UpdateAccessListRequest`
-  - [ ] Support authorization entries (username/password pairs)
-  - [ ] Support client IP allow/deny lists
-- [ ] Task 2: Implement AccessListClient
-  - [ ] Endpoints: `/api/nginx/access-lists`
-  - [ ] CRUD only (no enable/disable for access lists)
-- [ ] Task 3: Wire into NginxProxyManagerClient root
-- [ ] Task 4: Write unit tests
+- [x] Task 1: Create access list models in `Models/AccessLists/`
+  - [x] `AccessListResponse`, `CreateAccessListRequest`, `UpdateAccessListRequest`
+  - [x] Support authorization entries (username/password pairs)
+  - [x] Support client IP allow/deny lists
+- [x] Task 2: Implement AccessListClient
+  - [x] Endpoints: `/api/nginx/access-lists`
+  - [x] CRUD only (no enable/disable for access lists)
+- [x] Task 3: Wire into NginxProxyManagerClient root
+- [x] Task 4: Write unit tests
 
 ## Dev Notes
 
@@ -41,9 +41,17 @@ so that I can automate IP-based and authentication-based access restrictions.
 
 ### Agent Model Used
 
+Claude Opus 4.6 (1M context)
+
 ### Debug Log References
 
 ### Completion Notes List
+
+- Implemented AccessListClient with CRUD-only operations (no enable/disable); models support authorization entries and client IP allow/deny lists; unit tests complete.
+
+### Change Log
+
+- 2026-04-17: Story completed and moved to review status.
 
 ### File List
 

@@ -13,6 +13,14 @@ internal sealed class NginxProxyManagerClient : INginxProxyManagerClient
 
     private ProxyHostClient? _proxyHosts;
     private CertificateClient? _certificates;
+    private RedirectionHostClient? _redirectionHosts;
+    private DeadHostClient? _deadHosts;
+    private StreamClient? _streams;
+    private AccessListClient? _accessLists;
+    private UserClient? _users;
+    private SettingsClient? _settings;
+    private AuditLogClient? _auditLog;
+    private ReportsClient? _reports;
 
     public NginxProxyManagerClient(HttpClient httpClient, IJsonSerializer serializer)
     {
@@ -28,36 +36,35 @@ internal sealed class NginxProxyManagerClient : INginxProxyManagerClient
     public ICertificateClient Certificates =>
         _certificates ??= new CertificateClient(_httpClient, _serializer);
 
-    // Phase 2 resource clients — stub implementations until Epic 6
     /// <inheritdoc />
     public IRedirectionHostClient RedirectionHosts =>
-        throw new NotImplementedException("Redirection host management will be available in a future release.");
+        _redirectionHosts ??= new RedirectionHostClient(_httpClient, _serializer);
 
     /// <inheritdoc />
     public IDeadHostClient DeadHosts =>
-        throw new NotImplementedException("Dead host management will be available in a future release.");
+        _deadHosts ??= new DeadHostClient(_httpClient, _serializer);
 
     /// <inheritdoc />
     public IStreamClient Streams =>
-        throw new NotImplementedException("Stream management will be available in a future release.");
+        _streams ??= new StreamClient(_httpClient, _serializer);
 
     /// <inheritdoc />
     public IAccessListClient AccessLists =>
-        throw new NotImplementedException("Access list management will be available in a future release.");
+        _accessLists ??= new AccessListClient(_httpClient, _serializer);
 
     /// <inheritdoc />
     public IUserClient Users =>
-        throw new NotImplementedException("User management will be available in a future release.");
+        _users ??= new UserClient(_httpClient, _serializer);
 
     /// <inheritdoc />
     public ISettingsClient Settings =>
-        throw new NotImplementedException("Settings management will be available in a future release.");
+        _settings ??= new SettingsClient(_httpClient, _serializer);
 
     /// <inheritdoc />
     public IAuditLogClient AuditLog =>
-        throw new NotImplementedException("Audit log access will be available in a future release.");
+        _auditLog ??= new AuditLogClient(_httpClient, _serializer);
 
     /// <inheritdoc />
     public IReportsClient Reports =>
-        throw new NotImplementedException("Reports access will be available in a future release.");
+        _reports ??= new ReportsClient(_httpClient, _serializer);
 }

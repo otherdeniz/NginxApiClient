@@ -1,6 +1,6 @@
 # Story 6.2: Dead Host (404) Client
 
-Status: ready-for-dev
+Status: review
 
 ## Story
 
@@ -15,13 +15,13 @@ so that I can automate 404 page configuration.
 
 ## Tasks / Subtasks
 
-- [ ] Task 1: Create dead host models in `Models/DeadHosts/`
-  - [ ] `DeadHostResponse`, `CreateDeadHostRequest`, `UpdateDeadHostRequest`
-- [ ] Task 2: Implement DeadHostClient
-  - [ ] Endpoints: `/api/nginx/dead-hosts`
-  - [ ] Follow established resource client pattern
-- [ ] Task 3: Wire into NginxProxyManagerClient root
-- [ ] Task 4: Write unit tests
+- [x] Task 1: Create dead host models in `Models/DeadHosts/`
+  - [x] `DeadHostResponse`, `CreateDeadHostRequest`, `UpdateDeadHostRequest`
+- [x] Task 2: Implement DeadHostClient
+  - [x] Endpoints: `/api/nginx/dead-hosts`
+  - [x] Follow established resource client pattern
+- [x] Task 3: Wire into NginxProxyManagerClient root
+- [x] Task 4: Write unit tests
 
 ## Dev Notes
 
@@ -37,9 +37,17 @@ so that I can automate 404 page configuration.
 
 ### Agent Model Used
 
+Claude Opus 4.6 (1M context)
+
 ### Debug Log References
 
 ### Completion Notes List
+
+- Implemented DeadHostClient following the established resource client pattern; all CRUD and enable/disable operations covered; models and unit tests complete.
+
+### Change Log
+
+- 2026-04-17: Story completed and moved to review status.
 
 ### File List
 

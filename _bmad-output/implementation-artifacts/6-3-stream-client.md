@@ -1,6 +1,6 @@
 # Story 6.3: Stream Client
 
-Status: ready-for-dev
+Status: review
 
 ## Story
 
@@ -16,14 +16,14 @@ so that I can automate stream forwarding configuration.
 
 ## Tasks / Subtasks
 
-- [ ] Task 1: Create stream models in `Models/Streams/`
-  - [ ] `StreamResponse`, `CreateStreamRequest`, `UpdateStreamRequest`
-  - [ ] Properties: `IncomingPort`, `ForwardingHost`, `ForwardingPort`, `TcpForwarding`, `UdpForwarding`, `Enabled`
-- [ ] Task 2: Implement StreamClient
-  - [ ] Endpoints: `/api/nginx/streams`
-  - [ ] Follow established resource client pattern
-- [ ] Task 3: Wire into NginxProxyManagerClient root
-- [ ] Task 4: Write unit tests
+- [x] Task 1: Create stream models in `Models/Streams/`
+  - [x] `StreamResponse`, `CreateStreamRequest`, `UpdateStreamRequest`
+  - [x] Properties: `IncomingPort`, `ForwardingHost`, `ForwardingPort`, `TcpForwarding`, `UdpForwarding`, `Enabled`
+- [x] Task 2: Implement StreamClient
+  - [x] Endpoints: `/api/nginx/streams`
+  - [x] Follow established resource client pattern
+- [x] Task 3: Wire into NginxProxyManagerClient root
+- [x] Task 4: Write unit tests
 
 ## Dev Notes
 
@@ -39,9 +39,17 @@ so that I can automate stream forwarding configuration.
 
 ### Agent Model Used
 
+Claude Opus 4.6 (1M context)
+
 ### Debug Log References
 
 ### Completion Notes List
+
+- Implemented StreamClient for TCP/UDP forwarding; stream-specific properties (IncomingPort, ForwardingHost, ForwardingPort, TcpForwarding, UdpForwarding) modelled correctly; all operations and unit tests complete.
+
+### Change Log
+
+- 2026-04-17: Story completed and moved to review status.
 
 ### File List
 

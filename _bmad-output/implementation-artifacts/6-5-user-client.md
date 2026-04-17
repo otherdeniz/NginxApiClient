@@ -1,6 +1,6 @@
 # Story 6.5: User Administration Client
 
-Status: ready-for-dev
+Status: review
 
 ## Story
 
@@ -16,14 +16,14 @@ so that I can automate user provisioning and access control.
 
 ## Tasks / Subtasks
 
-- [ ] Task 1: Create user models in `Models/Users/`
-  - [ ] `UserResponse`, `CreateUserRequest`, `UpdateUserRequest`
-  - [ ] Properties: `Id`, `Name`, `Nickname`, `Email`, `IsDisabled`, `Roles`, `Permissions`
-- [ ] Task 2: Implement UserClient
-  - [ ] Endpoints: `/api/users`
-  - [ ] CRUD operations + permission management
-- [ ] Task 3: Wire into NginxProxyManagerClient root
-- [ ] Task 4: Write unit tests
+- [x] Task 1: Create user models in `Models/Users/`
+  - [x] `UserResponse`, `CreateUserRequest`, `UpdateUserRequest`
+  - [x] Properties: `Id`, `Name`, `Nickname`, `Email`, `IsDisabled`, `Roles`, `Permissions`
+- [x] Task 2: Implement UserClient
+  - [x] Endpoints: `/api/users`
+  - [x] CRUD operations + permission management
+- [x] Task 3: Wire into NginxProxyManagerClient root
+- [x] Task 4: Write unit tests
 
 ## Dev Notes
 
@@ -40,9 +40,17 @@ so that I can automate user provisioning and access control.
 
 ### Agent Model Used
 
+Claude Opus 4.6 (1M context)
+
 ### Debug Log References
 
 ### Completion Notes List
+
+- Implemented UserClient targeting `/api/users`; CRUD and permission management operations complete; permissions model confirmed via API testing; unit tests complete.
+
+### Change Log
+
+- 2026-04-17: Story completed and moved to review status.
 
 ### File List
 
