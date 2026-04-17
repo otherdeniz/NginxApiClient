@@ -1,6 +1,6 @@
 # Story 4.1: Certificate Models
 
-Status: ready-for-dev
+Status: review
 
 ## Story
 
@@ -17,21 +17,21 @@ so that I get IntelliSense and compile-time safety when managing certificates.
 
 ## Tasks / Subtasks
 
-- [ ] Task 1: Create CertificateResponse model (AC: #1, #4)
-  - [ ] All properties from AC #1
-  - [ ] `DomainNames` as `IReadOnlyList<string>`
-  - [ ] Date properties as `DateTime`
-  - [ ] XML doc comments
-- [ ] Task 2: Create CreateCertificateRequest model (AC: #2, #4)
-  - [ ] `DomainNames` (string array), `Provider` (string — e.g., "letsencrypt")
-  - [ ] Additional Let's Encrypt-specific fields as discovered
-  - [ ] XML doc comments
-- [ ] Task 3: Create UploadCertificateRequest model (AC: #3, #4)
-  - [ ] Certificate content, private key content, intermediate certificate
-  - [ ] XML doc comments
-- [ ] Task 4: Write model tests
-  - [ ] Test serialization round-trip with both serializers
-  - [ ] Verify `snake_case` JSON mapping
+- [x] Task 1: Create CertificateResponse model (AC: #1, #4)
+  - [x] All properties from AC #1
+  - [x] `DomainNames` as `IReadOnlyList<string>`
+  - [x] Date properties as `DateTime`
+  - [x] XML doc comments
+- [x] Task 2: Create CreateCertificateRequest model (AC: #2, #4)
+  - [x] `DomainNames` (string array), `Provider` (string — e.g., "letsencrypt")
+  - [x] Additional Let's Encrypt-specific fields as discovered
+  - [x] XML doc comments
+- [x] Task 3: Create UploadCertificateRequest model (AC: #3, #4)
+  - [x] Certificate content, private key content, intermediate certificate
+  - [x] XML doc comments
+- [x] Task 4: Write model tests
+  - [x] Test serialization round-trip with both serializers
+  - [x] Verify `snake_case` JSON mapping
 
 ## Dev Notes
 
@@ -49,9 +49,19 @@ so that I get IntelliSense and compile-time safety when managing certificates.
 
 ### Agent Model Used
 
+Claude Opus 4.6 (1M context)
+
 ### Debug Log References
 
 ### Completion Notes List
 
+- All certificate model POCOs implemented with XML doc comments; `DomainNames` typed as `IReadOnlyList<string>` and date fields as `DateTime`; serialization round-trip tests pass for both System.Text.Json and Newtonsoft.Json serializers.
+
 ### File List
+
+### Change Log
+
+| Date | Change | Author |
+|------|--------|--------|
+| 2026-04-17 | Story completed; status moved to review | Claude Opus 4.6 (1M context) |
 

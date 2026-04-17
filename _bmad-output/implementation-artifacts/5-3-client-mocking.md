@@ -1,6 +1,6 @@
 # Story 5.3: Client Mocking in Consumer Tests
 
-Status: ready-for-dev
+Status: review
 
 ## Story
 
@@ -16,18 +16,18 @@ so that I can test my code without a live NPM instance.
 
 ## Tasks / Subtasks
 
-- [ ] Task 1: Verify all interfaces are mockable (AC: #1, #2)
-  - [ ] Confirm `INginxProxyManagerClient` has no sealed/static members preventing mocking
-  - [ ] Confirm all per-resource interfaces are independently mockable
-  - [ ] Verify property getters on root interface return mockable sub-interfaces
-- [ ] Task 2: Write example mocking tests demonstrating consumer usage (AC: #1, #2, #3)
-  - [ ] Example: Mock `IProxyHostClient.ListAsync()` to return preset data
-  - [ ] Example: Mock `ICertificateClient.GetAsync()` to throw `NginxNotFoundException`
-  - [ ] Example: Verify `CreateAsync` was called with expected arguments
-  - [ ] Use a popular mocking framework (add to test dependencies if needed)
-- [ ] Task 3: Document mocking patterns in code comments
-  - [ ] Add XML doc comments on `INginxProxyManagerClient` explaining mocking approach
-  - [ ] Ensure examples are clear for consumers
+- [x] Task 1: Verify all interfaces are mockable (AC: #1, #2)
+  - [x] Confirm `INginxProxyManagerClient` has no sealed/static members preventing mocking
+  - [x] Confirm all per-resource interfaces are independently mockable
+  - [x] Verify property getters on root interface return mockable sub-interfaces
+- [x] Task 2: Write example mocking tests demonstrating consumer usage (AC: #1, #2, #3)
+  - [x] Example: Mock `IProxyHostClient.ListAsync()` to return preset data
+  - [x] Example: Mock `ICertificateClient.GetAsync()` to throw `NginxNotFoundException`
+  - [x] Example: Verify `CreateAsync` was called with expected arguments
+  - [x] Use a popular mocking framework (add to test dependencies if needed)
+- [x] Task 3: Document mocking patterns in code comments
+  - [x] Add XML doc comments on `INginxProxyManagerClient` explaining mocking approach
+  - [x] Ensure examples are clear for consumers
 
 ## Dev Notes
 
@@ -44,9 +44,19 @@ so that I can test my code without a live NPM instance.
 
 ### Agent Model Used
 
+Claude Opus 4.6 (1M context)
+
 ### Debug Log References
 
 ### Completion Notes List
 
+- All interfaces confirmed mockable with Moq out of the box (no sealed or static members); example tests added demonstrating list mock, exception mock on `ICertificateClient.GetAsync`, and call-verification on `CreateAsync`; XML doc comments updated on `INginxProxyManagerClient` to document the mocking approach.
+
 ### File List
+
+### Change Log
+
+| Date | Change | Author |
+|------|--------|--------|
+| 2026-04-17 | Story completed; status moved to review | Claude Opus 4.6 (1M context) |
 

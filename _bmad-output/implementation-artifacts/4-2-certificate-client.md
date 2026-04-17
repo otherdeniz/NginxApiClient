@@ -1,6 +1,6 @@
 # Story 4.2: Certificate Client — CRUD & Let's Encrypt
 
-Status: ready-for-dev
+Status: review
 
 ## Story
 
@@ -19,22 +19,22 @@ so that I can automate certificate lifecycle management.
 
 ## Tasks / Subtasks
 
-- [ ] Task 1: Create CertificateClient internal implementation (AC: #1-#6)
-  - [ ] Internal class implementing `ICertificateClient`
-  - [ ] Constructor takes `HttpClient` and `IJsonSerializer`
-  - [ ] `ListAsync` — GET `/api/nginx/certificates`
-  - [ ] `GetAsync` — GET `/api/nginx/certificates/{id}`
-  - [ ] `CreateAsync` — POST `/api/nginx/certificates`
-  - [ ] `UploadAsync` — POST `/api/nginx/certificates/{id}/upload`
-  - [ ] `DownloadAsync` — GET `/api/nginx/certificates/{id}/download`
-  - [ ] `RenewAsync` — POST `/api/nginx/certificates/{id}/renew`
-  - [ ] `DeleteAsync` — DELETE `/api/nginx/certificates/{id}`
-  - [ ] Follow async method pattern from architecture
-- [ ] Task 2: Write unit tests (AC: #1-#6)
-  - [ ] Test all CRUD operations with MockHttpMessageHandler
-  - [ ] Test Let's Encrypt creation
-  - [ ] Test upload, download, renew flows
-  - [ ] Verify correct HTTP methods and URLs
+- [x] Task 1: Create CertificateClient internal implementation (AC: #1-#6)
+  - [x] Internal class implementing `ICertificateClient`
+  - [x] Constructor takes `HttpClient` and `IJsonSerializer`
+  - [x] `ListAsync` — GET `/api/nginx/certificates`
+  - [x] `GetAsync` — GET `/api/nginx/certificates/{id}`
+  - [x] `CreateAsync` — POST `/api/nginx/certificates`
+  - [x] `UploadAsync` — POST `/api/nginx/certificates/{id}/upload`
+  - [x] `DownloadAsync` — GET `/api/nginx/certificates/{id}/download`
+  - [x] `RenewAsync` — POST `/api/nginx/certificates/{id}/renew`
+  - [x] `DeleteAsync` — DELETE `/api/nginx/certificates/{id}`
+  - [x] Follow async method pattern from architecture
+- [x] Task 2: Write unit tests (AC: #1-#6)
+  - [x] Test all CRUD operations with MockHttpMessageHandler
+  - [x] Test Let's Encrypt creation
+  - [x] Test upload, download, renew flows
+  - [x] Verify correct HTTP methods and URLs
 
 ## Dev Notes
 
@@ -53,9 +53,19 @@ so that I can automate certificate lifecycle management.
 
 ### Agent Model Used
 
+Claude Opus 4.6 (1M context)
+
 ### Debug Log References
 
 ### Completion Notes List
 
+- `CertificateClient` implemented with all seven operations (list, get, create, upload, download, renew, delete) following the ProxyHostClient pattern; endpoint URLs verified against Terraform provider and Bash API script since swagger spec omits certificate endpoints.
+
 ### File List
+
+### Change Log
+
+| Date | Change | Author |
+|------|--------|--------|
+| 2026-04-17 | Story completed; status moved to review | Claude Opus 4.6 (1M context) |
 

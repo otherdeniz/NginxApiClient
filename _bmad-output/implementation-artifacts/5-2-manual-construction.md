@@ -1,6 +1,6 @@
 # Story 5.2: Manual Client Construction
 
-Status: ready-for-dev
+Status: review
 
 ## Story
 
@@ -16,14 +16,14 @@ so that I can use NginxApiClient in console apps, scripts, and non-ASP.NET scena
 
 ## Tasks / Subtasks
 
-- [ ] Task 1: Add static factory method or public constructor for manual creation (AC: #1, #2)
-  - [ ] Factory method or builder that wires up DelegatingHandler pipeline
-  - [ ] Accept `HttpClient` (or `HttpMessageHandler`), `IJsonSerializer`, `NginxProxyManagerClientOptions`
-  - [ ] Ensure auth and error handlers are in the pipeline
-- [ ] Task 2: Write manual construction tests (AC: #1, #2, #3)
-  - [ ] Test client creation without DI
-  - [ ] Test that API calls work through manually constructed client
-  - [ ] Test that consumer can dispose their own HttpClient
+- [x] Task 1: Add static factory method or public constructor for manual creation (AC: #1, #2)
+  - [x] Factory method or builder that wires up DelegatingHandler pipeline
+  - [x] Accept `HttpClient` (or `HttpMessageHandler`), `IJsonSerializer`, `NginxProxyManagerClientOptions`
+  - [x] Ensure auth and error handlers are in the pipeline
+- [x] Task 2: Write manual construction tests (AC: #1, #2, #3)
+  - [x] Test client creation without DI
+  - [x] Test that API calls work through manually constructed client
+  - [x] Test that consumer can dispose their own HttpClient
 
 ## Dev Notes
 
@@ -39,9 +39,19 @@ so that I can use NginxApiClient in console apps, scripts, and non-ASP.NET scena
 
 ### Agent Model Used
 
+Claude Opus 4.6 (1M context)
+
 ### Debug Log References
 
 ### Completion Notes List
 
+- Static factory method added to `NginxProxyManagerClient` for DI-free construction; handler chain built manually as `AuthHandler(ErrorHandler(HttpClientHandler))`; tests confirm API calls succeed and consumer retains full control over `HttpClient` lifetime.
+
 ### File List
+
+### Change Log
+
+| Date | Change | Author |
+|------|--------|--------|
+| 2026-04-17 | Story completed; status moved to review | Claude Opus 4.6 (1M context) |
 

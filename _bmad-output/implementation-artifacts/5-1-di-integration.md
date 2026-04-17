@@ -1,6 +1,6 @@
 # Story 5.1: DI Integration via IServiceCollection
 
-Status: ready-for-dev
+Status: review
 
 ## Story
 
@@ -17,23 +17,23 @@ so that I can inject `INginxProxyManagerClient` into my services.
 
 ## Tasks / Subtasks
 
-- [ ] Task 1: Create ServiceCollectionExtensions in SystemTextJson package (AC: #1-#4)
-  - [ ] `AddNginxApiClient(this IServiceCollection services, Action<NginxProxyManagerClientOptions> configure)`
-  - [ ] Register `SystemTextJsonSerializer` as `IJsonSerializer`
-  - [ ] Register `INginxProxyManagerClient` → `NginxProxyManagerClient`
-  - [ ] Register `HttpClient` via `AddHttpClient` with `AuthenticationDelegatingHandler` and `ErrorHandlingDelegatingHandler`
-  - [ ] Configure base address from options
-- [ ] Task 2: Create ServiceCollectionExtensions in NewtonsoftJson package (AC: #1-#4)
-  - [ ] Same pattern as SystemTextJson but registers `NewtonsoftJsonSerializer`
-- [ ] Task 3: Create NginxProxyManagerClient root implementation (AC: #2)
-  - [ ] Internal class implementing `INginxProxyManagerClient`
-  - [ ] Constructor receives `HttpClient`, `IJsonSerializer`
-  - [ ] Properties return per-resource client instances (ProxyHostClient, CertificateClient, etc.)
-  - [ ] Lazy initialization of resource clients
-- [ ] Task 4: Write DI integration tests (AC: #1-#4)
-  - [ ] Test service registration resolves `INginxProxyManagerClient`
-  - [ ] Test `ProxyHosts` and `Certificates` properties return non-null clients
-  - [ ] Test handler pipeline is correctly configured
+- [x] Task 1: Create ServiceCollectionExtensions in SystemTextJson package (AC: #1-#4)
+  - [x] `AddNginxApiClient(this IServiceCollection services, Action<NginxProxyManagerClientOptions> configure)`
+  - [x] Register `SystemTextJsonSerializer` as `IJsonSerializer`
+  - [x] Register `INginxProxyManagerClient` → `NginxProxyManagerClient`
+  - [x] Register `HttpClient` via `AddHttpClient` with `AuthenticationDelegatingHandler` and `ErrorHandlingDelegatingHandler`
+  - [x] Configure base address from options
+- [x] Task 2: Create ServiceCollectionExtensions in NewtonsoftJson package (AC: #1-#4)
+  - [x] Same pattern as SystemTextJson but registers `NewtonsoftJsonSerializer`
+- [x] Task 3: Create NginxProxyManagerClient root implementation (AC: #2)
+  - [x] Internal class implementing `INginxProxyManagerClient`
+  - [x] Constructor receives `HttpClient`, `IJsonSerializer`
+  - [x] Properties return per-resource client instances (ProxyHostClient, CertificateClient, etc.)
+  - [x] Lazy initialization of resource clients
+- [x] Task 4: Write DI integration tests (AC: #1-#4)
+  - [x] Test service registration resolves `INginxProxyManagerClient`
+  - [x] Test `ProxyHosts` and `Certificates` properties return non-null clients
+  - [x] Test handler pipeline is correctly configured
 
 ## Dev Notes
 
@@ -57,9 +57,19 @@ so that I can inject `INginxProxyManagerClient` into my services.
 
 ### Agent Model Used
 
+Claude Opus 4.6 (1M context)
+
 ### Debug Log References
 
 ### Completion Notes List
 
+- `ServiceCollectionExtensions.AddNginxApiClient` implemented for both SystemTextJson and NewtonsoftJson packages; `NginxProxyManagerClient` root class wires up `AuthenticationDelegatingHandler` → `ErrorHandlingDelegatingHandler` pipeline via `IHttpClientFactory`; DI integration tests confirm all services resolve correctly.
+
 ### File List
+
+### Change Log
+
+| Date | Change | Author |
+|------|--------|--------|
+| 2026-04-17 | Story completed; status moved to review | Claude Opus 4.6 (1M context) |
 

@@ -1,6 +1,6 @@
 # Story 4.3: Certificate Unit Tests
 
-Status: ready-for-dev
+Status: review
 
 ## Story
 
@@ -17,19 +17,19 @@ so that I can verify certificate operations work correctly.
 
 ## Tasks / Subtasks
 
-- [ ] Task 1: Write CertificateClient unit tests (AC: #1-#4)
-  - [ ] `ListAsync_ReturnsCertificates_WhenCertsExist`
-  - [ ] `GetAsync_ReturnsCertificate_WhenIdExists`
-  - [ ] `CreateAsync_ProvisionsCert_WithLetsEncrypt`
-  - [ ] `UploadAsync_UploadsCert_WithValidContent`
-  - [ ] `DownloadAsync_ReturnsCertContent_WhenIdExists`
-  - [ ] `RenewAsync_RenewsCert_WhenIdExists`
-  - [ ] `DeleteAsync_Succeeds_WhenIdExists`
-  - [ ] `CreateAsync_ThrowsNginxApiException_WhenInvalid`
-- [ ] Task 2: Write serialization tests (AC: #4)
-  - [ ] Verify request bodies serialize with `snake_case`
-  - [ ] Verify response deserialization handles all certificate properties
-  - [ ] Test with both serializer implementations
+- [x] Task 1: Write CertificateClient unit tests (AC: #1-#4)
+  - [x] `ListAsync_ReturnsCertificates_WhenCertsExist`
+  - [x] `GetAsync_ReturnsCertificate_WhenIdExists`
+  - [x] `CreateAsync_ProvisionsCert_WithLetsEncrypt`
+  - [x] `UploadAsync_UploadsCert_WithValidContent`
+  - [x] `DownloadAsync_ReturnsCertContent_WhenIdExists`
+  - [x] `RenewAsync_RenewsCert_WhenIdExists`
+  - [x] `DeleteAsync_Succeeds_WhenIdExists`
+  - [x] `CreateAsync_ThrowsNginxApiException_WhenInvalid`
+- [x] Task 2: Write serialization tests (AC: #4)
+  - [x] Verify request bodies serialize with `snake_case`
+  - [x] Verify response deserialization handles all certificate properties
+  - [x] Test with both serializer implementations
 
 ## Dev Notes
 
@@ -45,9 +45,19 @@ so that I can verify certificate operations work correctly.
 
 ### Agent Model Used
 
+Claude Opus 4.6 (1M context)
+
 ### Debug Log References
 
 ### Completion Notes List
 
+- All eight unit tests and serialization tests implemented; test naming follows `{MethodName}_{Scenario}_{ExpectedBehavior}` convention; both serializer implementations covered; error-path tests verify `NginxApiException` is thrown on invalid requests.
+
 ### File List
+
+### Change Log
+
+| Date | Change | Author |
+|------|--------|--------|
+| 2026-04-17 | Story completed; status moved to review | Claude Opus 4.6 (1M context) |
 
