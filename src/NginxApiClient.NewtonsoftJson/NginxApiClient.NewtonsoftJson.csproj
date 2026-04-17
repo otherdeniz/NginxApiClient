@@ -7,6 +7,7 @@
     <PackageTags>nginx-proxy-manager;npm-api;reverse-proxy;nginx;docker;newtonsoft-json</PackageTags>
     <PackageId>NginxApiClient.NewtonsoftJson</PackageId>
     <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
