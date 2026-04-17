@@ -1,6 +1,6 @@
 # Story 2.4: Error Handling Delegating Handler
 
-Status: ready-for-dev
+Status: review
 
 ## Story
 
@@ -17,27 +17,27 @@ so that I can catch specific exception types without parsing HTTP responses myse
 
 ## Tasks / Subtasks
 
-- [ ] Task 1: Create ErrorHandlingDelegatingHandler (AC: #1, #2)
-  - [ ] Extend `DelegatingHandler`
-  - [ ] Internal class in `NginxApiClient.Internal`
-  - [ ] Override `SendAsync` to inspect response status codes
-  - [ ] Parse NPM error detail from response body JSON
-  - [ ] Map 404 → `NginxNotFoundException`
-  - [ ] Map other 4xx/5xx → `NginxApiException`
-  - [ ] Pass through 2xx responses untouched
-- [ ] Task 2: Implement network error handling (AC: #3, #4)
-  - [ ] Catch `HttpRequestException`, `TaskCanceledException`
-  - [ ] Wrap in `NginxApiException` with descriptive message
-  - [ ] Set original exception as `InnerException`
-  - [ ] Ensure no credentials leak in error messages
-- [ ] Task 3: Write error handler tests (AC: #1, #2, #3, #4)
-  - [ ] Test 404 → `NginxNotFoundException`
-  - [ ] Test 422 → `NginxApiException` with error detail
-  - [ ] Test 500 → `NginxApiException`
-  - [ ] Test network timeout → `NginxApiException` with inner exception
-  - [ ] Test 200 passes through without exception
-  - [ ] Test error detail parsed from NPM JSON response body
-  - [ ] Test credentials not present in any exception message
+- [x] Task 1: Create ErrorHandlingDelegatingHandler (AC: #1, #2)
+  - [x] Extend `DelegatingHandler`
+  - [x] Internal class in `NginxApiClient.Internal`
+  - [x] Override `SendAsync` to inspect response status codes
+  - [x] Parse NPM error detail from response body JSON
+  - [x] Map 404 → `NginxNotFoundException`
+  - [x] Map other 4xx/5xx → `NginxApiException`
+  - [x] Pass through 2xx responses untouched
+- [x] Task 2: Implement network error handling (AC: #3, #4)
+  - [x] Catch `HttpRequestException`, `TaskCanceledException`
+  - [x] Wrap in `NginxApiException` with descriptive message
+  - [x] Set original exception as `InnerException`
+  - [x] Ensure no credentials leak in error messages
+- [x] Task 3: Write error handler tests (AC: #1, #2, #3, #4)
+  - [x] Test 404 → `NginxNotFoundException`
+  - [x] Test 422 → `NginxApiException` with error detail
+  - [x] Test 500 → `NginxApiException`
+  - [x] Test network timeout → `NginxApiException` with inner exception
+  - [x] Test 200 passes through without exception
+  - [x] Test error detail parsed from NPM JSON response body
+  - [x] Test credentials not present in any exception message
 
 ## Dev Notes
 
@@ -63,9 +63,18 @@ so that I can catch specific exception types without parsing HTTP responses myse
 
 ### Agent Model Used
 
+Claude Opus 4.6 (1M context)
+
 ### Debug Log References
 
 ### Completion Notes List
 
+ErrorHandlingDelegatingHandler implemented with full status code mapping. Network error wrapping handles both HttpRequestException and TaskCanceledException. NPM JSON error body parsing is gracefully fault-tolerant. All tests pass; no credentials exposed in any exception path.
+
 ### File List
 
+### Change Log
+
+| Date | Change |
+|------|--------|
+| 2026-04-17 | Implementation complete; status set to review |

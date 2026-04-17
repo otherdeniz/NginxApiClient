@@ -1,6 +1,6 @@
 # Story 2.3: Authentication Delegating Handler
 
-Status: ready-for-dev
+Status: review
 
 ## Story
 
@@ -18,27 +18,27 @@ so that I never manually manage tokens or deal with 401 errors from expired toke
 
 ## Tasks / Subtasks
 
-- [ ] Task 1: Create AuthenticationDelegatingHandler (AC: #1)
-  - [ ] Extend `DelegatingHandler`
-  - [ ] Internal class in `NginxApiClient.Internal`
-  - [ ] Inject `TokenStore` and `NginxProxyManagerClientOptions`
-  - [ ] Override `SendAsync` to add Bearer header from TokenStore
-  - [ ] Skip auth header for token endpoint requests (`/api/tokens`)
-- [ ] Task 2: Implement 401 retry logic (AC: #2, #3)
-  - [ ] On 401 response, call `TokenStore.InvalidateTokenAsync()`
-  - [ ] Re-acquire token via `TokenStore.GetTokenAsync()`
-  - [ ] Retry original request with new token
-  - [ ] If retry returns 401, throw `NginxAuthenticationException`
-- [ ] Task 3: Implement token acquisition HTTP call (AC: #1)
-  - [ ] POST to `/api/tokens` with `TokenRequest` body
-  - [ ] Deserialize `TokenResponse` and store in `TokenStore`
-  - [ ] Use `IJsonSerializer` for request/response serialization
-- [ ] Task 4: Write handler tests (AC: #1, #2, #3, #4, #5)
-  - [ ] Test Bearer header is added to requests
-  - [ ] Test 401 triggers re-auth and retry
-  - [ ] Test double-401 throws `NginxAuthenticationException`
-  - [ ] Test concurrent 401s trigger single refresh
-  - [ ] Test token endpoint requests skip auth header
+- [x] Task 1: Create AuthenticationDelegatingHandler (AC: #1)
+  - [x] Extend `DelegatingHandler`
+  - [x] Internal class in `NginxApiClient.Internal`
+  - [x] Inject `TokenStore` and `NginxProxyManagerClientOptions`
+  - [x] Override `SendAsync` to add Bearer header from TokenStore
+  - [x] Skip auth header for token endpoint requests (`/api/tokens`)
+- [x] Task 2: Implement 401 retry logic (AC: #2, #3)
+  - [x] On 401 response, call `TokenStore.InvalidateTokenAsync()`
+  - [x] Re-acquire token via `TokenStore.GetTokenAsync()`
+  - [x] Retry original request with new token
+  - [x] If retry returns 401, throw `NginxAuthenticationException`
+- [x] Task 3: Implement token acquisition HTTP call (AC: #1)
+  - [x] POST to `/api/tokens` with `TokenRequest` body
+  - [x] Deserialize `TokenResponse` and store in `TokenStore`
+  - [x] Use `IJsonSerializer` for request/response serialization
+- [x] Task 4: Write handler tests (AC: #1, #2, #3, #4, #5)
+  - [x] Test Bearer header is added to requests
+  - [x] Test 401 triggers re-auth and retry
+  - [x] Test double-401 throws `NginxAuthenticationException`
+  - [x] Test concurrent 401s trigger single refresh
+  - [x] Test token endpoint requests skip auth header
 
 ## Dev Notes
 
@@ -64,9 +64,18 @@ so that I never manually manage tokens or deal with 401 errors from expired toke
 
 ### Agent Model Used
 
+Claude Opus 4.6 (1M context)
+
 ### Debug Log References
 
 ### Completion Notes List
 
+AuthenticationDelegatingHandler implemented with full 401 retry and token refresh logic. Concurrent 401 handling verified via tests using MockHttpMessageHandler. Token endpoint bypass confirmed working.
+
 ### File List
 
+### Change Log
+
+| Date | Change |
+|------|--------|
+| 2026-04-17 | Implementation complete; status set to review |
