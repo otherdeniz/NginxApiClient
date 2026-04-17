@@ -1,6 +1,6 @@
 # Story 3.1: Proxy Host Models
 
-Status: ready-for-dev
+Status: review
 
 ## Story
 
@@ -18,25 +18,25 @@ so that I get IntelliSense and compile-time safety when working with proxy hosts
 
 ## Tasks / Subtasks
 
-- [ ] Task 1: Create ProxyHostResponse model (AC: #1, #5)
-  - [ ] All properties listed in AC #1
-  - [ ] `DomainNames` as `IReadOnlyList<string>`
-  - [ ] `Locations` as `IReadOnlyList<ProxyHostLocation>`
-  - [ ] XML doc comments on all properties
-- [ ] Task 2: Create CreateProxyHostRequest model (AC: #2, #5)
-  - [ ] Required: `DomainNames`, `ForwardScheme`, `ForwardHost`, `ForwardPort`
-  - [ ] Optional: SSL settings, advanced options, locations, certificate/ACL IDs
-  - [ ] XML doc comments explaining each property
-- [ ] Task 3: Create UpdateProxyHostRequest model (AC: #3, #5)
-  - [ ] All updatable proxy host properties
-  - [ ] XML doc comments
-- [ ] Task 4: Create ProxyHostLocation model (AC: #4, #5)
-  - [ ] `Path`, `ForwardScheme`, `ForwardHost`, `ForwardPort`, `AdvancedConfig`
-  - [ ] XML doc comments
-- [ ] Task 5: Write model tests
-  - [ ] Test model instantiation with all properties
-  - [ ] Test serialization round-trip with both serializers (from Story 1.2)
-  - [ ] Verify `snake_case` JSON mapping works correctly
+- [x] Task 1: Create ProxyHostResponse model (AC: #1, #5)
+  - [x] All properties listed in AC #1
+  - [x] `DomainNames` as `IReadOnlyList<string>`
+  - [x] `Locations` as `IReadOnlyList<ProxyHostLocation>`
+  - [x] XML doc comments on all properties
+- [x] Task 2: Create CreateProxyHostRequest model (AC: #2, #5)
+  - [x] Required: `DomainNames`, `ForwardScheme`, `ForwardHost`, `ForwardPort`
+  - [x] Optional: SSL settings, advanced options, locations, certificate/ACL IDs
+  - [x] XML doc comments explaining each property
+- [x] Task 3: Create UpdateProxyHostRequest model (AC: #3, #5)
+  - [x] All updatable proxy host properties
+  - [x] XML doc comments
+- [x] Task 4: Create ProxyHostLocation model (AC: #4, #5)
+  - [x] `Path`, `ForwardScheme`, `ForwardHost`, `ForwardPort`, `AdvancedConfig`
+  - [x] XML doc comments
+- [x] Task 5: Write model tests
+  - [x] Test model instantiation with all properties
+  - [x] Test serialization round-trip with both serializers (from Story 1.2)
+  - [x] Verify `snake_case` JSON mapping works correctly
 
 ## Dev Notes
 
@@ -56,9 +56,17 @@ so that I get IntelliSense and compile-time safety when working with proxy hosts
 
 ### Agent Model Used
 
+Claude Opus 4.6 (1M context)
+
 ### Debug Log References
 
 ### Completion Notes List
+
+- All proxy host POCO models implemented: `ProxyHostResponse`, `CreateProxyHostRequest`, `UpdateProxyHostRequest`, and `ProxyHostLocation`. Stub models from Story 1.4 replaced. Serialization round-trip verified for both SystemTextJson and NewtonsoftJson with `snake_case` mapping.
+
+### Change Log
+
+- 2026-04-17: Story completed and status set to review. All tasks finished and acceptance criteria met.
 
 ### File List
 

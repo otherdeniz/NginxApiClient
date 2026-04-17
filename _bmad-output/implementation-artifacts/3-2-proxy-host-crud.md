@@ -1,6 +1,6 @@
 # Story 3.2: Proxy Host Client — CRUD Operations
 
-Status: ready-for-dev
+Status: review
 
 ## Story
 
@@ -18,25 +18,25 @@ so that I can programmatically manage my NPM proxy configuration.
 
 ## Tasks / Subtasks
 
-- [ ] Task 1: Create ProxyHostClient internal implementation (AC: #1-#5)
-  - [ ] Internal class implementing `IProxyHostClient`
-  - [ ] Constructor takes `HttpClient` and `IJsonSerializer`
-  - [ ] Implement `ListAsync` — GET `/api/nginx/proxy-hosts`
-  - [ ] Implement `GetAsync` — GET `/api/nginx/proxy-hosts/{id}`
-  - [ ] Implement `CreateAsync` — POST `/api/nginx/proxy-hosts`
-  - [ ] Implement `UpdateAsync` — PUT `/api/nginx/proxy-hosts/{id}`
-  - [ ] Implement `DeleteAsync` — DELETE `/api/nginx/proxy-hosts/{id}`
-  - [ ] Validate non-null request parameters with `ArgumentNullException`
-  - [ ] All methods follow the async method pattern from architecture
-- [ ] Task 2: Write unit tests (AC: #1-#5)
-  - [ ] `ListAsync_ReturnsProxyHosts_WhenHostsExist`
-  - [ ] `GetAsync_ReturnsProxyHost_WhenIdExists`
-  - [ ] `GetAsync_ThrowsNotFoundException_WhenIdNotFound`
-  - [ ] `CreateAsync_ReturnsCreatedHost_WithValidRequest`
-  - [ ] `CreateAsync_ThrowsNginxApiException_WhenRequestInvalid`
-  - [ ] `UpdateAsync_UpdatesHost_WithValidRequest`
-  - [ ] `DeleteAsync_Succeeds_WhenIdExists`
-  - [ ] Verify correct HTTP method, URL, and request body for each operation
+- [x] Task 1: Create ProxyHostClient internal implementation (AC: #1-#5)
+  - [x] Internal class implementing `IProxyHostClient`
+  - [x] Constructor takes `HttpClient` and `IJsonSerializer`
+  - [x] Implement `ListAsync` — GET `/api/nginx/proxy-hosts`
+  - [x] Implement `GetAsync` — GET `/api/nginx/proxy-hosts/{id}`
+  - [x] Implement `CreateAsync` — POST `/api/nginx/proxy-hosts`
+  - [x] Implement `UpdateAsync` — PUT `/api/nginx/proxy-hosts/{id}`
+  - [x] Implement `DeleteAsync` — DELETE `/api/nginx/proxy-hosts/{id}`
+  - [x] Validate non-null request parameters with `ArgumentNullException`
+  - [x] All methods follow the async method pattern from architecture
+- [x] Task 2: Write unit tests (AC: #1-#5)
+  - [x] `ListAsync_ReturnsProxyHosts_WhenHostsExist`
+  - [x] `GetAsync_ReturnsProxyHost_WhenIdExists`
+  - [x] `GetAsync_ThrowsNotFoundException_WhenIdNotFound`
+  - [x] `CreateAsync_ReturnsCreatedHost_WithValidRequest`
+  - [x] `CreateAsync_ThrowsNginxApiException_WhenRequestInvalid`
+  - [x] `UpdateAsync_UpdatesHost_WithValidRequest`
+  - [x] `DeleteAsync_Succeeds_WhenIdExists`
+  - [x] Verify correct HTTP method, URL, and request body for each operation
 
 ## Dev Notes
 
@@ -63,9 +63,17 @@ so that I can programmatically manage my NPM proxy configuration.
 
 ### Agent Model Used
 
+Claude Opus 4.6 (1M context)
+
 ### Debug Log References
 
 ### Completion Notes List
+
+- `ProxyHostClient` implemented as an internal class with all five CRUD operations (List, Get, Create, Update, Delete). Error handling delegated to the pipeline handlers. All unit tests passing with `MockHttpMessageHandler`, verifying HTTP method, URL, and request body for each operation.
+
+### Change Log
+
+- 2026-04-17: Story completed and status set to review. All tasks finished and acceptance criteria met.
 
 ### File List
 
