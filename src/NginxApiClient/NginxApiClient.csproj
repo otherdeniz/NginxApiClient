@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>NginxApiClient</RootNamespace>
+    <Description>Comprehensive C# client library for the NGINX Proxy Manager REST API. Core package with interfaces, models, and abstractions.</Description>
+    <PackageTags>nginx-proxy-manager;npm-api;reverse-proxy;nginx;docker</PackageTags>
+    <PackageId>NginxApiClient</PackageId>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="NginxApiClient.Tests" />
+    <InternalsVisibleTo Include="NginxApiClient.IntegrationTests" />
+    <InternalsVisibleTo Include="NginxApiClient.SystemTextJson" />
+    <InternalsVisibleTo Include="NginxApiClient.NewtonsoftJson" />
+  </ItemGroup>
+
+</Project>

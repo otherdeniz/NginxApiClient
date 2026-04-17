@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
+    <RootNamespace>NginxApiClient.SystemTextJson</RootNamespace>
+    <Description>System.Text.Json serialization implementation for NginxApiClient. Use this package with .NET 8 or .NET 10.</Description>
+    <PackageTags>nginx-proxy-manager;npm-api;reverse-proxy;nginx;docker;system-text-json</PackageTags>
+    <PackageId>NginxApiClient.SystemTextJson</PackageId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NginxApiClient\NginxApiClient.csproj" />
+  </ItemGroup>
+
+</Project>
