@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>LegacyFrameworkUsage</RootNamespace>
+    <IsPackable>false</IsPackable>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+  <!-- Note: In a real .NET Framework 4.8 project, you would use:
+       <TargetFramework>net48</TargetFramework>
+       and reference NginxApiClient.NewtonsoftJson instead of SystemTextJson.
+       This example uses net8.0 for build compatibility but demonstrates
+       the NewtonsoftJson serializer pattern. -->
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\NginxApiClient\NginxApiClient.csproj" />
+    <ProjectReference Include="..\..\src\NginxApiClient.NewtonsoftJson\NginxApiClient.NewtonsoftJson.csproj" />
+  </ItemGroup>
+</Project>

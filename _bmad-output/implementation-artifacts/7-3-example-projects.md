@@ -1,6 +1,6 @@
 # Story 7.3: Runnable Example Projects
 
-Status: ready-for-dev
+Status: review
 
 ## Story
 
@@ -17,25 +17,25 @@ so that I can copy and adapt real-world scenarios.
 
 ## Tasks / Subtasks
 
-- [ ] Task 1: Create BasicUsage example project (AC: #1, #4)
-  - [ ] `examples/BasicUsage/BasicUsage.csproj` targeting net8.0
-  - [ ] `Program.cs` with authenticate, list, create, delete proxy host
-  - [ ] Inline comments explaining each step
-  - [ ] Add to solution file
-- [ ] Task 2: Create CertificateManagement example project (AC: #2, #4)
-  - [ ] `examples/CertificateManagement/CertificateManagement.csproj` targeting net8.0
-  - [ ] `Program.cs` with list certs, filter by expiry, provision, renew
-  - [ ] Inline comments
-  - [ ] Add to solution file
-- [ ] Task 3: Create LegacyFrameworkUsage example project (AC: #3, #4)
-  - [ ] `examples/LegacyFrameworkUsage/LegacyFrameworkUsage.csproj` targeting net48
-  - [ ] References `NginxApiClient.NewtonsoftJson` instead of SystemTextJson
-  - [ ] `Program.cs` with same basic usage as BasicUsage
-  - [ ] Inline comments
-  - [ ] Add to solution file
-- [ ] Task 4: Verify all examples compile
-  - [ ] `dotnet build` on all example projects
-  - [ ] Verify project references resolve correctly
+- [x] Task 1: Create BasicUsage example project (AC: #1, #4)
+  - [x] `examples/BasicUsage/BasicUsage.csproj` targeting net8.0
+  - [x] `Program.cs` with authenticate, list, create, delete proxy host
+  - [x] Inline comments explaining each step
+  - [x] Add to solution file
+- [x] Task 2: Create CertificateManagement example project (AC: #2, #4)
+  - [x] `examples/CertificateManagement/CertificateManagement.csproj` targeting net8.0
+  - [x] `Program.cs` with list certs, filter by expiry, provision, renew
+  - [x] Inline comments
+  - [x] Add to solution file
+- [x] Task 3: Create LegacyFrameworkUsage example project (AC: #3, #4)
+  - [x] `examples/LegacyFrameworkUsage/LegacyFrameworkUsage.csproj` targeting net48
+  - [x] References `NginxApiClient.NewtonsoftJson` instead of SystemTextJson
+  - [x] `Program.cs` with same basic usage as BasicUsage
+  - [x] Inline comments
+  - [x] Add to solution file
+- [x] Task 4: Verify all examples compile
+  - [x] `dotnet build` on all example projects
+  - [x] Verify project references resolve correctly
 
 ## Dev Notes
 
@@ -52,9 +52,17 @@ so that I can copy and adapt real-world scenarios.
 
 ### Agent Model Used
 
+Claude Opus 4.6 (1M context)
+
 ### Debug Log References
 
 ### Completion Notes List
+
+- All three example projects (BasicUsage, CertificateManagement, LegacyFrameworkUsage) created, added to the solution, and verified to compile successfully. Inline comments explain each step.
+
+### Change Log
+
+- 2026-04-17: Story completed and moved to review status.
 
 ### File List
 

@@ -1,6 +1,6 @@
 # Story 7.2: README & Quick-Start Guide
 
-Status: ready-for-dev
+Status: review
 
 ## Story
 
@@ -18,26 +18,26 @@ so that I can make my first API call within 5 minutes.
 
 ## Tasks / Subtasks
 
-- [ ] Task 1: Write installation section (AC: #1)
-  - [ ] `dotnet add package` commands for modern .NET
-  - [ ] `Install-Package` commands for .NET Framework 4.8
-  - [ ] Explain which serializer package to choose
-- [ ] Task 2: Write quick-start guide (AC: #2)
-  - [ ] Under 10 lines: create client, authenticate, list proxy hosts
-  - [ ] Show both DI and manual construction approaches
-- [ ] Task 3: Write DI registration example (AC: #3)
-  - [ ] ASP.NET Core `Program.cs` example with `AddNginxApiClient`
-  - [ ] Controller injection example
-- [ ] Task 4: Write create proxy host example (AC: #4)
-  - [ ] Create proxy host with domain names, forward host/port, SSL settings
-- [ ] Task 5: Add examples section with links (AC: #5)
-  - [ ] Link to `examples/BasicUsage`
-  - [ ] Link to `examples/CertificateManagement`
-  - [ ] Link to `examples/LegacyFrameworkUsage`
-- [ ] Task 6: Add badges, license, and project description
-  - [ ] NuGet badge, build status badge
-  - [ ] MIT license reference
-  - [ ] Brief project description and feature highlights
+- [x] Task 1: Write installation section (AC: #1)
+  - [x] `dotnet add package` commands for modern .NET
+  - [x] `Install-Package` commands for .NET Framework 4.8
+  - [x] Explain which serializer package to choose
+- [x] Task 2: Write quick-start guide (AC: #2)
+  - [x] Under 10 lines: create client, authenticate, list proxy hosts
+  - [x] Show both DI and manual construction approaches
+- [x] Task 3: Write DI registration example (AC: #3)
+  - [x] ASP.NET Core `Program.cs` example with `AddNginxApiClient`
+  - [x] Controller injection example
+- [x] Task 4: Write create proxy host example (AC: #4)
+  - [x] Create proxy host with domain names, forward host/port, SSL settings
+- [x] Task 5: Add examples section with links (AC: #5)
+  - [x] Link to `examples/BasicUsage`
+  - [x] Link to `examples/CertificateManagement`
+  - [x] Link to `examples/LegacyFrameworkUsage`
+- [x] Task 6: Add badges, license, and project description
+  - [x] NuGet badge, build status badge
+  - [x] MIT license reference
+  - [x] Brief project description and feature highlights
 
 ## Dev Notes
 
@@ -54,9 +54,17 @@ so that I can make my first API call within 5 minutes.
 
 ### Agent Model Used
 
+Claude Opus 4.6 (1M context)
+
 ### Debug Log References
 
 ### Completion Notes List
+
+- README written with full installation, quick-start, DI registration, create proxy host, and examples sections. Badges, license reference, and links to the examples/ folder included.
+
+### Change Log
+
+- 2026-04-17: Story completed and moved to review status.
 
 ### File List
 

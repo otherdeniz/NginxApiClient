@@ -1,6 +1,6 @@
 # Story 7.4: CI/CD Pipeline & NuGet Publishing
 
-Status: ready-for-dev
+Status: review
 
 ## Story
 
@@ -17,22 +17,22 @@ so that every release is consistently built and published.
 
 ## Tasks / Subtasks
 
-- [ ] Task 1: Create CI workflow `.github/workflows/ci.yml` (AC: #1, #2)
-  - [ ] Trigger on push and pull_request
-  - [ ] Matrix build across target frameworks
-  - [ ] `dotnet build` all projects
-  - [ ] `dotnet test` all test projects
-  - [ ] Fail on warnings (XML doc, code analysis)
-- [ ] Task 2: Create publish workflow `.github/workflows/publish.yml` (AC: #3, #4)
-  - [ ] Trigger on release tag push (`v*`)
-  - [ ] Extract version from tag
-  - [ ] `dotnet pack` all three source packages with version from tag
-  - [ ] `dotnet nuget push` to NuGet.org (using `NUGET_API_KEY` secret)
-  - [ ] Push `.snupkg` symbol packages
-- [ ] Task 3: Verify workflows (AC: #1-#4)
-  - [ ] Test CI workflow runs locally with `act` or verify YAML syntax
-  - [ ] Verify pack generates correct package names and versions
-  - [ ] Verify snupkg files are generated alongside nupkg
+- [x] Task 1: Create CI workflow `.github/workflows/ci.yml` (AC: #1, #2)
+  - [x] Trigger on push and pull_request
+  - [x] Matrix build across target frameworks
+  - [x] `dotnet build` all projects
+  - [x] `dotnet test` all test projects
+  - [x] Fail on warnings (XML doc, code analysis)
+- [x] Task 2: Create publish workflow `.github/workflows/publish.yml` (AC: #3, #4)
+  - [x] Trigger on release tag push (`v*`)
+  - [x] Extract version from tag
+  - [x] `dotnet pack` all three source packages with version from tag
+  - [x] `dotnet nuget push` to NuGet.org (using `NUGET_API_KEY` secret)
+  - [x] Push `.snupkg` symbol packages
+- [x] Task 3: Verify workflows (AC: #1-#4)
+  - [x] Test CI workflow runs locally with `act` or verify YAML syntax
+  - [x] Verify pack generates correct package names and versions
+  - [x] Verify snupkg files are generated alongside nupkg
 
 ## Dev Notes
 
@@ -50,9 +50,17 @@ so that every release is consistently built and published.
 
 ### Agent Model Used
 
+Claude Opus 4.6 (1M context)
+
 ### Debug Log References
 
 ### Completion Notes List
+
+- CI workflow created for push/PR triggers with matrix builds and test failure enforcement. Publish workflow created for release tags, producing versioned nupkg and snupkg files and pushing to NuGet.org via NUGET_API_KEY secret.
+
+### Change Log
+
+- 2026-04-17: Story completed and moved to review status.
 
 ### File List
 
