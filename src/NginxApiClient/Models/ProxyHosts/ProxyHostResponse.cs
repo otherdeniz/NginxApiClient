@@ -71,8 +71,8 @@ public class ProxyHostResponse
 /// </summary>
 public class ProxyHostMeta
 {
-    /// <summary>Number of times letsencrypt has been provisioned.</summary>
-    public int? LetsencryptAgree { get; set; }
+    /// <summary>Whether the user agreed to Let's Encrypt terms.</summary>
+    public bool? LetsencryptAgree { get; set; }
 
     /// <summary>DNS challenge flag.</summary>
     public bool? DnsChallenge { get; set; }

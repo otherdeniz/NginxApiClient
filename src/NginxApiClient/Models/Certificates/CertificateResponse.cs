@@ -48,5 +48,5 @@ public class CertificateMeta
     public string? DnsProviderCredentials { get; set; }
 
     /// <summary>Whether the user agreed to Let's Encrypt terms.</summary>
-    public int? LetsencryptAgree { get; set; }
+    public bool? LetsencryptAgree { get; set; }
 }
