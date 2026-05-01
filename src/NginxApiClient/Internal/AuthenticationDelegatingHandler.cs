@@ -87,7 +87,8 @@ internal sealed class AuthenticationDelegatingHandler : DelegatingHandler
         var tokenRequest = TokenRequest.FromCredentials(_options.Credentials);
         string json = _serializer.Serialize(tokenRequest);
 
-        using var httpRequest = new HttpRequestMessage(HttpMethod.Post, TokenEndpoint)
+        var tokenUri = new Uri(new Uri(_options.BaseUrl.TrimEnd('/') + "/"), TokenEndpoint.TrimStart('/'));
+        using var httpRequest = new HttpRequestMessage(HttpMethod.Post, tokenUri)
         {
             Content = new StringContent(json, System.Text.Encoding.UTF8, "application/json"),
         };
