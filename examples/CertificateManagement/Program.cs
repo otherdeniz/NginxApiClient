@@ -71,7 +71,7 @@ try
         Meta = new CertificateMeta
         {
             LetsencryptEmail = "admin@example.com",
-            LetsencryptAgree = 1,
+            LetsencryptAgree = true,
         },
     });
     Console.WriteLine($"Provisioned certificate {newCert.Id} for {string.Join(", ", newCert.DomainNames)}");

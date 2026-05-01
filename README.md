@@ -132,7 +132,7 @@ var newCert = await client.Certificates.CreateAsync(new CreateCertificateRequest
 {
     DomainNames = new List<string> { "new.example.com" },
     Provider = "letsencrypt",
-    Meta = new CertificateMeta { LetsencryptEmail = "admin@example.com", LetsencryptAgree = 1 },
+    Meta = new CertificateMeta { LetsencryptEmail = "admin@example.com", LetsencryptAgree = true },
 });
 ```
 
