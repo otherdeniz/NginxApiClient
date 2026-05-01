@@ -12,8 +12,7 @@ namespace NginxApiClient.IntegrationTests
         private readonly string _nginxUser = "test@test.com";
         private readonly string _nginxPassword = "test123456";
 
-        //[Fact(Skip = "Manual Test")]
-        [Fact]
+        [Fact(Skip = "Manual Test")]
         public async Task CreateProxyHost_Success()
         {
             // change these values to fit your environemnt
