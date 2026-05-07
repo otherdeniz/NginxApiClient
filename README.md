@@ -174,9 +174,9 @@ catch (NginxApiException ex)
 | `client.AuditLog` | `IAuditLogClient` | Read audit log entries |
 | `client.Reports` | `IReportsClient` | Access host statistics |
 
-## Package Architecture
+## NUGET Packages
 
-| Package | Target | Purpose |
+| NUGET Package | Target | Purpose |
 |---------|--------|---------|
 | `NginxApiClient` | .NET Standard 2.0 | Core interfaces, models, exceptions |
 | `NginxApiClient.SystemTextJson` | .NET 8, .NET 9 | System.Text.Json serialization + DI |
