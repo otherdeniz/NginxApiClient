@@ -10,6 +10,18 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
+  <!-- Versioning. VersionPrefix is overridden in CI from the git tag and drives
+       PackageVersion (via Version) and InformationalVersion. AssemblyVersion is
+       pinned so strong-named .NET Framework consumers don't need binding-redirect
+       updates on every patch release - bump it only on breaking changes.
+       FileVersion is set explicitly because the SDK defaults FileVersion to
+       AssemblyVersion when AssemblyVersion is set, which would freeze it at 1.0.0.0. -->
+  <PropertyGroup>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>$(VersionPrefix).0</FileVersion>
+  </PropertyGroup>
+
   <!-- SourceLink and Symbol Packages -->
   <PropertyGroup>
     <IncludeSymbols>true</IncludeSymbols>
