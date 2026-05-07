@@ -42,7 +42,7 @@ jobs:
         run: dotnet test --configuration Release --no-build --verbosity normal
 
       - name: Pack
-        run: dotnet pack --configuration Release --no-build --output ./nupkg
+        run: dotnet pack --configuration Release --no-build --output ./nupkg -p:VersionPrefix=${{ steps.version.outputs.PREFIX }} -p:VersionSuffix=${{ steps.version.outputs.SUFFIX }}
 
       - name: Push to NuGet
         run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
