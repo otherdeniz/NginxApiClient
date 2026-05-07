@@ -22,19 +22,27 @@ jobs:
 
       - name: Extract version from tag
         id: version
-        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> $GITHUB_OUTPUT
+        run: |
+          VERSION=${GITHUB_REF#refs/tags/v}
+          PREFIX=${VERSION%%-*}
+          SUFFIX=""
+          if [[ "$VERSION" == *-* ]]; then
+            SUFFIX=${VERSION#*-}
+          fi
+          echo "PREFIX=$PREFIX" >> $GITHUB_OUTPUT
+          echo "SUFFIX=$SUFFIX" >> $GITHUB_OUTPUT
 
       - name: Restore dependencies
         run: dotnet restore
 
       - name: Build
-        run: dotnet build --configuration Release --no-restore
+        run: dotnet build --configuration Release --no-restore -p:VersionPrefix=${{ steps.version.outputs.PREFIX }} -p:VersionSuffix=${{ steps.version.outputs.SUFFIX }}
 
       - name: Test
         run: dotnet test --configuration Release --no-build --verbosity normal
 
       - name: Pack
-        run: dotnet pack --configuration Release --no-build --output ./nupkg /p:PackageVersion=${{ steps.version.outputs.VERSION }}
+        run: dotnet pack --configuration Release --no-build --output ./nupkg
 
       - name: Push to NuGet
         run: dotnet nuget push ./nupkg/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate

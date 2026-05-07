@@ -10,6 +10,18 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
+  <!-- Versioning. VersionPrefix is overridden in CI from the git tag and drives
+       PackageVersion (via Version) and InformationalVersion. AssemblyVersion is
+       pinned so strong-named .NET Framework consumers don't need binding-redirect
+       updates on every patch release - bump it only on breaking changes.
+       FileVersion is set explicitly because the SDK defaults FileVersion to
+       AssemblyVersion when AssemblyVersion is set, which would freeze it at 1.0.0.0. -->
+  <PropertyGroup>
+    <VersionPrefix>1.0.0</VersionPrefix>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>$(VersionPrefix).0</FileVersion>
+  </PropertyGroup>
+
   <!-- SourceLink and Symbol Packages -->
   <PropertyGroup>
     <IncludeSymbols>true</IncludeSymbols>
@@ -24,6 +36,16 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
     <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <!-- Strong-name signing (required so .NET Framework consumers that are themselves
+       strong-named can reference these assemblies). Examples opt out via their own
+       Directory.Build.props. NginxApiClientPublicKey is the full public key from
+       NginxApiClient-KeyFile.snk and is referenced by InternalsVisibleTo entries. -->
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(MSBuildThisFileDirectory)NginxApiClient-KeyFile.snk</AssemblyOriginatorKeyFile>
+    <NginxApiClientPublicKey>00240000048000009400000006020000002400005253413100040000010001006925f3c2d5b1d9d2e8f1652e5b23f223390e09b94ee66a09657c6cdff11ec6a428188a58073e5029240e2d6844b7e50f25b6dd48ed1e536a7c4ad2d0ffa8617371fa8601bc5bf32c50dbd702bebd07dd999e589ac6fe9f380e325c9c6f38ea8ce7653f15932ab0c53c2d27c8a10a51dcc8ce876699a94b2c09879b2368f2f3a7</NginxApiClientPublicKey>
   </PropertyGroup>
 
   <!-- Nullable reference types for supported targets -->

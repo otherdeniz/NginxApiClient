@@ -15,10 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <InternalsVisibleTo Include="NginxApiClient.Tests" />
-    <InternalsVisibleTo Include="NginxApiClient.IntegrationTests" />
-    <InternalsVisibleTo Include="NginxApiClient.SystemTextJson" />
-    <InternalsVisibleTo Include="NginxApiClient.NewtonsoftJson" />
+    <InternalsVisibleTo Include="NginxApiClient.Tests" Key="$(NginxApiClientPublicKey)" />
+    <InternalsVisibleTo Include="NginxApiClient.IntegrationTests" Key="$(NginxApiClientPublicKey)" />
+    <InternalsVisibleTo Include="NginxApiClient.SystemTextJson" Key="$(NginxApiClientPublicKey)" />
+    <InternalsVisibleTo Include="NginxApiClient.NewtonsoftJson" Key="$(NginxApiClientPublicKey)" />
   </ItemGroup>
 
 </Project>
